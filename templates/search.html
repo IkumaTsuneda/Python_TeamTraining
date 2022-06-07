@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>書籍検索画面</title>
+<link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+<link href="https://fonts.googleapis.com/earlyaccess/hannari.css" rel="stylesheet" />
+</head>
+<body>
+<!-- <%
+String bookTitle = request.getParameter("booktitle");-->
+<!--String authorName = request.getParameter("authorname");
+%>-->
+<form action ="/BookManagerServlet" method ="POST">
+
+<h1>書籍検索画面</h1><br>
+    <h3>書籍名：<input type ="text" size="50" name="booktitle" ></h3>
+    <!--<%if(bookTitle != null)%>--><!--value=<%=bookTitle%>>-->
+    <h3>著者名：<input type ="text" size="50" name="authorname" ></h3>
+           <!--#<%if(authorName != null)%>--><!--value=<%=authorName%>>--><br><br><br>
+
+<input type ="submit" value="検索">
+</form>
+<br>
+<form action =/create/>
+<input type="submit" value="新規登録">
+</form>
+
+<!--<jsp:include page="search-result.jsp">
+<jsp:param value="bookList" name="bookList"/>
+</jsp:include>-->
+</body>
+</html>
