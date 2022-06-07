@@ -32,29 +32,14 @@ class BookDao:
 
         cursor = cnx.cursor()
         params = (book.get_booktitle(), book.get_authorname())
-        cursor.execute("INSERT INTO m_book (book_title, author_name) VALUES (%s, %s)", params)
+        cursor.execute("INSERT INTO m_book (book_title, author_name) VALUES(%s, %s)", params)
 
         # 更新件数を受け取る処理
         cursor.fetchall()
         count = cursor.rowcount
-
         cnx.commit()
         cursor.close()
         cnx.close()
-
         return count
 
-    def delete(self, ids):
-        cnx = ConnectionManager.getConnection()
-        cursor = cnx.cursor()
 
-        for i in ids:
-            params = (i,)
-
-        cursor.execute("DELETE FROM m_book WHERE id = %s", params)
-
-        # 更新件数を受け取る処理
-        cursor.fetchall()
-        count = cursor.rowcount
-
-        return count
