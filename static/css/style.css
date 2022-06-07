@@ -1,0 +1,50 @@
+@charset "UTF-8";
+* {
+    font-family: "Meiryo", serif;
+    text-align:center;
+    background-color:#90ee90
+}
+
+table{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1{
+	font-size:5em;
+	text-align:center;
+	line-height:0.95em;
+	font-weight:bold;
+	color: #8b4513;
+	text-shadow:
+		1px -1px 1px #BDBDBD,
+		-1px 2px 1px #737272,
+		-2px 4px 1px #767474,
+		-3px 6px 1px #787777,
+		-4px 8px 1px #424242,
+		-5px 10px 1px #616161,
+		-6px 12px 1px #757575,
+		-7px 14px 1px #9E9E9E,
+		-8px 16px 1px #BDBDBD,
+		-9px 18px 1px #E0E0E0;
+}
+
+form{
+color:#8b4513
+}
+
+input[type = "submit"]{
+  font-size: 18px;
+  display: inline-block;
+  padding: 0em 3em 0em;
+  color: #8b4513;
+  border: double 4px #8b4513;
+  cursor: pointer;
+  margin-right: 0px;
+}
+
+ input[type = "text"]{
+    box-shadow: 0 0 5px 0 rgba(139,69,19,1);
+    border: 2px solid #FFF !important;
+    outline: 0;
+}
