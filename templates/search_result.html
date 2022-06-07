@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>書籍検索結果</title>
+<link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+<link href="https://fonts.googleapis.com/earlyaccess/hannari.css" rel="stylesheet" />
+</head>
+<body>
+
+{% if bookList|length == 0: %}
+    <hr>
+    <h2>書籍検索結果</h2>
+    対象のデータがありません。
+
+{% else: %}
+    <form action="/modify" method="POST">
+    <hr>
+    <h2>書籍検索結果</h2>
+    <input type="submit" value="削除"><br>
+        <table border="1">
+        <tr>
+             <td>削除</td>
+             <td>No.</td>
+             <td>書籍名</td>
+             <td>著者名</td>
+        <tr>
+            {% endif %}
+    {% for book in bookList: %}
+        <tr>
+            <td><input type="checkbox" name="book" value= {{book[0]}}></td>
+            <td>{{book[0]}}</td>
+            <td>{{book[1]}}</td>
+            <td>{{book[2]}}</td>
+      </tr>
+    {% endfor %}
+
+     </table>
+
+</form>
+</body>
+</html>
