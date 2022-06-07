@@ -29,6 +29,14 @@ h1{
 		-9px 18px 1px #E0E0E0;
 }
 
+.text__bound {
+  animation: key .3s ease infinite alternate;
+}
+@keyframes key {
+  0% {transform: translateY(0px);}
+  100% {transform: translateY(-10px);}
+}
+
 form{
 color:#8b4513
 }
@@ -47,4 +55,8 @@ input[type = "submit"]{
     box-shadow: 0 0 5px 0 rgba(139,69,19,1);
     border: 2px solid #FFF !important;
     outline: 0;
+}
+
+h2 {
+  border-bottom: 6px double #8b4513;
 }
