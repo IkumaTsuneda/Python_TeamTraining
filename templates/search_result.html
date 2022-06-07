@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,17 +9,20 @@
 <link href="https://fonts.googleapis.com/earlyaccess/hannari.css" rel="stylesheet" />
 </head>
 <body>
-
-{% if bookList|length == 0: %}
+{% if bookList == None: %}
     <hr>
     <h2>書籍検索結果</h2>
     対象のデータがありません。
+{% elif bookList|length==0: %}
 
 {% else: %}
     <form action="/modify" method="POST">
     <hr>
     <h2>書籍検索結果</h2>
-    <input type="submit" value="削除"><br>
+    <br><br>
+    <input type="submit" value="削除"><br><br>
+        <a href="/">書籍検索画面に戻る</a>
+            <br><br>
         <table border="1">
         <tr>
              <td>削除</td>
@@ -26,7 +30,6 @@
              <td>書籍名</td>
              <td>著者名</td>
         <tr>
-            {% endif %}
     {% for book in bookList: %}
         <tr>
             <td><input type="checkbox" name="book" value= {{book[0]}}></td>
@@ -37,6 +40,7 @@
     {% endfor %}
 
      </table>
+{% endif %}
 
 </form>
 </body>
