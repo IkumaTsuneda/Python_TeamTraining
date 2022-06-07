@@ -27,7 +27,7 @@ def book_manager():
         param.set_booktitle(booktitle)
         param.set_authorname(authorname)
         bookList = (list(dao.select(param)))
-
+        
         if len(bookList) == 0:
             bookList = None
 
@@ -37,7 +37,7 @@ def book_manager():
     except ModuleNotFoundError:
         print('モジュールがみつかりません')
 
-    return render_template('/search_result.html/', bookList=bookList)
+    return render_template('/search.html/', bookList=bookList)
 
 
 # 書籍登録画面
@@ -56,7 +56,6 @@ def book_modify():
 
     try:
 
-        if booktitle != None:
 
             authorname = request.form["authorname"]
 
@@ -66,12 +65,7 @@ def book_modify():
             book.set_authorname(authorname)
 
             count = dao.insert(book)
-        else:
-            ids = request.form['book']
-            if ids == None:
-                pass
-            else:
-                count = dao.delete(ids)
+
     except mysql.connector.Error:
         print('DB操作エラー')
     except ModuleNotFoundError:
